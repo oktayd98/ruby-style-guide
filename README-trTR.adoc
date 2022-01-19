@@ -6,7 +6,7 @@
 :toc: preamble
 :toclevels: 1
 ifndef::backend-pdf[]
-:toc-title: pass:[<h2>Table of Contents</h2>]
+:toc-title: pass:[<h2>İçindekiler</h2>]
 endif::[]
 :source-highlighter: rouge
 
@@ -18,7 +18,7 @@ Rol modeller önemlidir.
 ____
 
 ifdef::env-github[]
-TIP: https://rubystyle.guide adresinde bu rehberin daha gelişmiş yönlendirmelere sahip güzel bir versiyonunu bulabilirsiniz.
+TIP: https://rubystyle.guide adresinde bu rehberin daha gelişmiş sayfalamaya sahip güzel bir versiyonunu bulabilirsiniz.
 endif::[]
 
 Bu Ruby stil rehberi, Ruby yazılımcılarına diğer Ruby yazılımcılarının rahat okuyabileceği şekilde kod yazabilmesi için kullanabilecekleri en iyi pratikleri önerir.
@@ -68,10 +68,10 @@ Programlar insanların okuması ve sadece şans eseri makinelerin çalıştırma
 ____
 
 Kodun yazıldığından daha çok okunması bilinen bir bilgidir.
-Burada gösterilen yönergeler, yazılan kodun okunabilirliğini arttırmak ve geniş Ruby kodu yelpazesinde tutarlılığı sağlamayı amaçlamaktadır. Aynı zamanda rastgele bir ideal yerine Ruby'nin gerçek dünyadaki kullanımını yansıtmayı amaçlamıştır.
+Burada gösterilen yönergeler, yazılan kodun okunabilirliğini artırmak ve geniş Ruby kodu yelpazesinde tutarlılığı sağlamayı amaçlamaktadır. Aynı zamanda rastgele bir ideal yerine Ruby'nin gerçek dünyadaki kullanımını yansıtmayı amaçlamıştır.
 Kabul görmüş bir kullanım ile öznel olarak daha iyi bir seçenek arasında kaldığımızda kabul gören kullanımı tercih ettik. footnote:[Yine de bazen okuyucuya alternatifleri düşünmesini önerebiliriz.]
 
-Ruby topluluğunda belirli kurallarla ilgili bir fikir birliğininin sağlanamadığı alanlar vardır (string tırnakları, hash ifadelerindeki boşluklar, çok satırlı metod zincirindeki nokta pozisyonu gibi). Bu senaryolarda tüm kullanımlar kabul edilir ve birini seçip tutarlı bir şekilde uygulamak size kalmıştır.
+Ruby topluluğunda belirli kurallarla ilgili bir fikir birliğininin sağlanamadığı alanlar vardır (string tırnakları, hash ifadelerindeki boşluklar, çok satırlı metot zincirindeki nokta pozisyonu gibi). Bu senaryolarda tüm kullanımlar kabul edilir ve birini seçip tutarlı bir şekilde uygulamak size kalmıştır.
 
 Ruby, bu rehber oluşturulduğunda 15 yıldan uzun süredir varlığını sürdürüyordu ve dilin esnekliği ile ortak standartların olmaması, bir çok farklı kullanımın oluşmasına sebep oldu. İnsanları topluluk standartlarının amacı etrafında toplamak çok fazla zaman ve enerji aldı ve hala yapacak çok işimiz var.
 
@@ -90,9 +90,8 @@ Ancak bazen stil rehberinin önerileri geçerli olmayabilir. Ne zaman tutarsız 
 
 Beliri bir yönergeyi görmezden gelmek için bazı sebepler:
 
-//TODO ÇEVİRİ
 * Bu rehberi okuyarak kod yazmış birine göre bile kodun okunabilirliğinin azalması.
-* To be consistent with surrounding code that also breaks it (maybe for historic reasons) -- although this is also an opportunity to clean up someone else's mess (in true XP style).
+* İlgili yeri çevreleyen kod ile tutarlı olunması.
 * Söz konusu kodun rehberden daha eski olması ve değiştirmek için başka bir sebebin olmayışı.
 * Kodun, rehberin önerdiği kullanımı desteklemeyen eski bir Ruby versiyonunda yazılması.
 
@@ -149,49 +148,48 @@ end
 
 Satır uzunluğunu 80 karakter ile sınırlayın.
 
-//TODO ÇEVİRİ
-TIP: Most editors and IDEs have configuration options to help you with that.
-They would typically highlight lines that exceed the length limit.
+TIP: Çoğu editör ve IDE bu konuda size yardımcı olacak konfigürasyon seçeneklerine sahiptir.
+Genellikle sınırı aşan satırları vurgularlar.
 
-.Why Bother with 80 characters in a World of Modern Widescreen Displays?
+.Modern Geniş Ekran Monitörlerin Dünyasında Neden 80 Karakter Kullanalım? 
 ****
 
-A lot of people these days feel that a maximum line length of 80 characters is
-just a remnant of the past and makes little sense today. After all - modern
-displays can easily fit 200+ characters on a single line.  Still, there are some
-important benefits to be gained from sticking to shorter lines of code.
+Bugünlerde bir çok insan maksimum 80 karakterlik satır uzunluğunun geçmişten
+gelen bir alışkanlık olduğunu ve artık bir anlam ifade etmediğini düşünüyor.
+Artık modern ekranlar tek bir satıra 200'den fazla karakter sığdırabiliyor.
+Yine de daha kısa satır uzunluğu kullanmanın kazandıracağı takım önemli faydalar
+vardır.
 
-First, and foremost - numerous studies have shown that humans read much faster
-vertically and very long lines of text impede the reading process. As noted
-earlier, one of the guiding principles of this style guide is to optimize the
-code we write for human consumption.
+Birincisi ve en önemlisi - çok sayıda araştırma insanların dikey olarak daha hızlı
+okuduğunu ve uzun satırların okumayı zorlaştırdığını göstermiştir. Daha önce de
+belirtildiği üzere bu rehberin amaçlarından biri yazdığımız kodun daha kolay
+okunmasını sağlamaktır.
 
-Additionally, limiting the required editor window width makes it possible to
-have several files open side-by-side, and works well when using code review
-tools that present the two versions in adjacent columns.
+Ek olarak, kullandığınız editör penceresinin genişliğini sınırlamak, birden fazla
+dosyayı yan yana açmayı mümkün kılar ve kodun farklı sürümlerini gösteren inceleme
+araçlarını kullanırken daha kolay çalışmayı sağlar.
 
-The default wrapping in most tools disrupts the visual structure of the code,
-making it more difficult to understand. The limits are chosen to avoid wrapping
-in editors with the window width set to 80, even if the tool places a marker
-glyph in the final column when wrapping lines. Some web based tools may not
-offer dynamic line wrapping at all.
+Çoğu araçtaki varsayılan düzenleme, kodun görsel yapısını bozarak anlaşılmasını
+zorlaştırır. Sınırlar, satırları kaydırırken araç son sütuna bir işaret glifi
+eklese bile, pencere genişliği 80'e ayarlanmış editörlerde kaydırmayı önlemek
+için seçilir. Bazı web tabanlı araçlar dinamik satır kaydırma seçeneği sunmayabilir.
 
-Some teams strongly prefer a longer line length. For code maintained exclusively
-or primarily by a team that can reach agreement on this issue, it is okay to
-increase the line length limit up to 100 characters, or all the way up
-to 120 characters. Please, restrain the urge to go beyond 120 characters.
+Bazı takımlar özellikle daha geniş satır uzunlukları tercih eder. Öncelikli olarak
+bu konuda takımla anlaşmaya varmak şartıyla, satır uzunluğunu 100 karaktere veya
+120 karaktere kadar artırmak uygundur. Lütfen 120 karakterden daha fazla satır
+uzunluğu kullanma isteğinizi dizginleyin.
 ****
 
 === Satır Sonu Boşlukları (No Trailing Whitespace) [[no-trailing-whitespace]]
 
 Satır sonunda boşluk bırakmaktan kaçının.
 
-TIP: Most editors and IDEs have configuration options to visualize trailing whitespace and
-to remove it automatically on save.
+TIP: Çoğu editör ve IDE satır sonundaki boşlukları gösterme ve kaydedildiğinde otomatik 
+olarak silme seçeneğine sahiptir.
 
 === Satır Sonları (Line Endings) [[crlf]]
 
-Unix-tarzı satır sonu kullanın.footnote:[*BSD/Solaris/Linux/macOS kullanıcıları için varsayılandır.Windows kullanıcılarının dikkat etmesi gerekir.]
+Unix-tarzı satır sonu kullanın.footnote:[*BSD/Solaris/Linux/macOS kullanıcıları için varsayılandır. Windows kullanıcılarının dikkat etmesi gerekir.]
 
 [TIP]
 ====
@@ -216,7 +214,7 @@ TIP: This should be done via editor configuration, not manually.
 [source,ruby]
 ----
 # kötü
-puts 'foobar'; # superfluous semicolon
+puts 'foobar'; # geresiz noktalı virgün
 
 # iyi
 puts 'foobar'
@@ -393,19 +391,20 @@ else
 end
 ----
 
-.A Bit of History
+.Biraz Tarih
 ****
-This is the style established in both "The Ruby Programming Language" and "Programming Ruby".
-Historically it is derived from the fact that `case` and `switch` statements are not blocks, hence should not be indented, and the `when` and `else` keywords are labels (compiled in the C language, they are literally labels for `JMP` calls).
+Bu hem "The Ruby Programming Language" hem de "Programming Ruby"de kullanılan stildir.
+Tarihsel olarak `case` ve `switch` ifadelerinin blok olmadığı, dolayısıyla girintili olmaması,
+`when` ve `else` anahtar kelimelerinin birer etiket olması gerçeğinden türetilmiştir.
 ****
 
-=== Indent Conditional Assignment [[indent-conditional-assignment]]
+=== Koşullu Atama Girintisi [[indent-conditional-assignment]]
 
-When assigning the result of a conditional expression to a variable, preserve the usual alignment of its branches.
+Bir değişkene koşullu ifadenin sonucunu atarken, girintileri aynı hizada tutun.
 
 [source,ruby]
 ----
-# bad - pretty convoluted
+# kötü - oldukça karışık
 kind = case year
 when 1850..1889 then 'Blues'
 when 1890..1909 then 'Ragtime'
@@ -421,7 +420,7 @@ else
   calc_something_else
 end
 
-# good - it's apparent what's going on
+# iyi - ne olduğu anlaşılır
 kind = case year
        when 1850..1889 then 'Blues'
        when 1890..1909 then 'Ragtime'
@@ -437,7 +436,7 @@ result = if some_cond
            calc_something_else
          end
 
-# good (and a bit more width efficient)
+# iyi (ve genişlik açısından daha verimli)
 kind =
   case year
   when 1850..1889 then 'Blues'
@@ -456,13 +455,13 @@ result =
   end
 ----
 
-=== Empty Lines between Methods [[empty-lines-between-methods]]
+=== Metotlar Arası Boş Satırlar [[empty-lines-between-methods]]
 
-Use empty lines between method definitions and also to break up methods into logical paragraphs internally.
+Metot tanımları arasında ve metot içindeki kodları mantıksal paragraflara ayırmak için boş satırlar kullanın.
 
 [source,ruby]
 ----
-# bad
+# kötü
 def some_method
   data = initialize(options)
   data.manipulate!
@@ -472,7 +471,7 @@ def some_other_method
   result
 end
 
-# good
+# iyi
 def some_method
   data = initialize(options)
 
@@ -486,31 +485,31 @@ def some_other_method
 end
 ----
 
-=== Two or More Empty Lines [[two-or-more-empty-lines]]
+=== İki veya Daha Fazla Boş Satır [[two-or-more-empty-lines]]
 
-Don't use several empty lines in a row.
-
-[source,ruby]
-----
-# bad - It has two empty lines.
-some_method
-
-
-some_method
-
-# good
-some_method
-
-some_method
-----
-
-=== Empty Lines around Attribute Accessor [[empty-lines-around-attribute-accessor]]
-
-Use empty lines around attribute accessor.
+Arka arkaya birden fazla boş satır kullanmayın.
 
 [source,ruby]
 ----
-# bad
+# kötü - İki tane boş satır var.
+some_method
+
+
+some_method
+
+# iyi
+some_method
+
+some_method
+----
+
+=== Nitelik Erişimcisi Etrafındaki Boş Satırlar [[empty-lines-around-attribute-accessor]]
+
+Nitelik erişimcisi (attribute accessor) etrafında boş satır kullanın.
+
+[source,ruby]
+----
+# kötü
 class Foo
   attr_reader :foo
   def foo
@@ -518,7 +517,7 @@ class Foo
   end
 end
 
-# good
+# iyi
 class Foo
   attr_reader :foo
 
@@ -528,20 +527,20 @@ class Foo
 end
 ----
 
-=== Empty Lines around Access Modifier [[empty-lines-around-access-modifier]]
+=== Erişim Belirteçleri Etrafındaki Boş Satırlar [[empty-lines-around-access-modifier]]
 
-Use empty lines around access modifier.
+Erişim belirteçleri etrafında boş satır kullanın.
 
 [source,ruby]
 ----
-# bad
+# kötü
 class Foo
   def bar; end
   private
   def baz; end
 end
 
-# good
+# iyi
 class Foo
   def bar; end
 
@@ -551,13 +550,13 @@ class Foo
 end
 ----
 
-=== Empty Lines around Bodies [[empty-lines-around-bodies]]
+=== Gövdeler Etrafındaki Boş Satırlar [[empty-lines-around-bodies]]
 
-Don't use empty lines around method, class, module, block bodies.
+Metot, sınıf, modül ve blok gövdeleri etrafında boş satır kullanmayın.
 
 [source,ruby]
 ----
-# bad
+# kötü
 class Foo
 
   def foo
@@ -582,7 +581,7 @@ class Foo
 
 end
 
-# good
+# iyi
 class Foo
   def foo
     begin
@@ -596,62 +595,62 @@ class Foo
 end
 ----
 
-=== Trailing Comma in Method Arguments [[no-trailing-params-comma]]
+=== Metot Argümanlarının Sonunda Virgül [[no-trailing-params-comma]]
 
-Avoid comma after the last parameter in a method call, especially when the parameters are not on separate lines.
+Bir metot çağrısı yaparken son parametreden sonra virgül kullanmaktan kaçının. Özellikle parametreler
+ayrı satırlarda değilse.
 
 [source,ruby]
 ----
-# bad - easier to move/add/remove parameters, but still not preferred
+# kötü - taşıma/ekleme/silme daha kolay ama yine de tercih edilmez
 some_method(
   size,
   count,
   color,
 )
 
-# bad
+# kötü
 some_method(size, count, color, )
 
-# good
+# iyi
 some_method(size, count, color)
 ----
 
-=== Spaces around Equals [[spaces-around-equals]]
+=== Eşitliklerin Etrafındaki Boşluklar [[spaces-around-equals]]
 
-Use spaces around the `=` operator when assigning default values to method parameters:
+Metot parametrelerine varsayılan değer atarken `=` operatörünün etrafında boşluk kullanın.
 
 [source,ruby]
 ----
-# bad
+# kötü
 def some_method(arg1=:default, arg2=nil, arg3=[])
   # do something...
 end
 
-# good
+# iyi
 def some_method(arg1 = :default, arg2 = nil, arg3 = [])
   # do something...
 end
 ----
 
-While several Ruby books suggest the first style, the second is much more
-prominent in practice (and arguably a bit more readable).
+Birkaç Ruby kitabı ilk kullanımı önerir. Ancak ikincisi daha okunabilirdir.
 
-=== Line Continuation in Expressions [[no-trailing-backslash]]
+=== İfadelerde Satır Devamlılığı [[no-trailing-backslash]]
 
-Avoid line continuation with `\` where not required.
-In practice, avoid using line continuations for anything but string concatenation.
+Gerekli olmadıkça `\` ile satır bölmekten kaçının.
+Pratikte, string birleştirme dışında herhangi bir şey için satır devamlarını kullanmaktan kaçının.
 
 [source,ruby]
 ----
-# bad (\ is not needed here)
+# kötü (gereksiz '\' kullanımı)
 result = 1 - \
          2
 
-# bad (\ is required, but still ugly as hell)
+# bad (\ gerekli, ancak korkunç derecede çirkin)
 result = 1 \
          - 2
 
-# good
+# iyi
 result = 1 -
          2
 
@@ -659,56 +658,58 @@ long_string = 'First part of the long string' \
               ' and second part of the long string'
 ----
 
-=== Multi-line Method Chains [[consistent-multi-line-chains]]
+=== Çok Satırlı Metot Zincirleri [[consistent-multi-line-chains]]
 
-Adopt a consistent multi-line method chaining style.
-There are two popular styles in the Ruby community, both of which are considered good - leading `.`  and trailing `.`.
+Birden fazla satırda devam eden metot zincirlerinde tutarlı olun.
+Ruby topluluğunda kabul ikisi de iyi olarak görülen iki kullanım vardır - başında ve sonunda `.` kullanımı.
 
-==== Leading `.` [[leading-dot-in-multi-line-chains]]
+==== `.` Başta [[leading-dot-in-multi-line-chains]]
 
-When continuing a chained method call on another line, keep the `.` on the second line.
+Başka bir satırda metot zincirine devam ederken `.` işaretini ikinci satırda kullanın.
 
 [source,ruby]
 ----
-# bad - need to consult first line to understand second line
+# kötü - ikinci satırı anlamak için ilk satırı okumanız gerekir
 one.two.three.
   four
 
-# good - it's immediately clear what's going on the second line
+# iyi - ikinci satırda ne olduğu hemen anlaşılıyor
 one.two.three
   .four
 ----
 
-==== Trailing `.` [[trailing-dot-in-multi-line-chains]]
+==== `.` Sonda [[trailing-dot-in-multi-line-chains]]
 
-When continuing a chained method call on another line, include the `.` on the first line to indicate that the expression continues.
+Başka bir satırda metot zincirine devam ederken, ifadenin devam ettiğini belirtmek için
+ilk satıra `.` işaretini ekleyin.
 
 [source,ruby]
 ----
-# bad - need to read ahead to the second line to know that the chain continues
+# kötü - zincirin devam ettiğini görmek için ikinci satırı okumanız gerekir
 one.two.three
   .four
 
-# good - it's immediately clear that the expression continues beyond the first line
+# good - zincirin devam ettiği ilk satırdan anlaşılıyor
 one.two.three.
   four
 ----
 
-A discussion on the merits of both alternative styles can be found https://github.com/rubocop/ruby-style-guide/pull/176[here].
+Her iki kullanım hakkındaki tartışmayı https://github.com/rubocop/ruby-style-guide/pull/176[burada] bulabilirsiniz.
 
-=== Method Arguments Alignment [[no-double-indent]]
+=== Metot Argümanlarını Hizalama [[no-double-indent]]
 
-Align the arguments of a method call if they span more than one line.
-When aligning arguments is not appropriate due to line-length constraints, single indent for the lines after the first is also acceptable.
+Birden fazla satırda yazılıyorsa metodun argümanlarını hizalayın.
+Satır uzunluğu sınırı nedeniyle argümanları hizalamak mümkün olmadığında, ilk argümandan sonra
+tek girinti de kabul edilebilir.
 
 [source,ruby]
 ----
-# starting point (line is too long)
+# başlangıç (satır çok uzun)
 def send_mail(source)
   Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
 end
 
-# bad (double indent)
+# kötü (çift girinti)
 def send_mail(source)
   Mailer.deliver(
       to: 'bob@example.com',
@@ -717,7 +718,7 @@ def send_mail(source)
       body: source.text)
 end
 
-# good
+# iyi
 def send_mail(source)
   Mailer.deliver(to: 'bob@example.com',
                  from: 'us@example.com',
@@ -725,7 +726,7 @@ def send_mail(source)
                  body: source.text)
 end
 
-# good (normal indent)
+# iyi (tek girinti)
 def send_mail(source)
   Mailer.deliver(
     to: 'bob@example.com',
@@ -736,80 +737,80 @@ def send_mail(source)
 end
 ----
 
-=== Implicit Options Hash [[no-braces-opts-hash]]
+=== Parametre Olarak Hash (Implicit Options Hash) [[no-braces-opts-hash]]
 
-IMPORTANT: As of Ruby 2.7 braces around an options hash are no longer
-optional.
+IMPORTANT: Ruby 2.7'den itibaren parametre olarak verilen hash objelerinin 
+etrafındaki parantezler artık isteğe bağlı değildir.
 
-Omit the outer braces around an implicit options hash.
+Parametre olarak kullanılan hash objelerinin etrafındaki parantezleri atlayın.
 
 [source,ruby]
 ----
-# bad
+# kötü
 user.set({ name: 'John', age: 45, permissions: { read: true } })
 
-# good
+# iyi
 user.set(name: 'John', age: 45, permissions: { read: true })
 ----
 
-=== DSL Method Calls [[no-dsl-decorating]]
+=== DSL Metot Çağrıları [[no-dsl-decorating]]
 
-Omit both the outer braces and parentheses for methods that are part of an internal DSL.
+Bir alana ait olan (DSL - Domain Specific Language) metodlar için parantezleri atlayın..
 
 [source,ruby]
 ----
 class Person < ActiveRecord::Base
-  # bad
+  # kötü
   validates(:name, { presence: true, length: { within: 1..10 } })
 
-  # good
+  # iyi
   validates :name, presence: true, length: { within: 1..10 }
 end
 ----
 
-=== Space in Method Calls [[parens-no-spaces]]
+=== Metot Çağrılarındaki Boşluklar [[parens-no-spaces]]
 
-Do not put a space between a method name and the opening parenthesis.
+Metot adı ve parantezleri arasına boşluk bırakmayın.
 
 [source,ruby]
 ----
-# bad
+# kötü
 puts (x + y)
 
-# good
+# iyi
 puts(x + y)
 ----
 
-=== Space in Brackets Access
+=== Parantez Erişimlerindeki Boşluk
 
-Do not put a space between a receiver name and the opening brackets.
+Bir nesne ve parantezleri arasında boşluk bırakmayın.
 
 [source,ruby]
 ----
-# bad
+# kötü
 collection [index_or_key]
 
-# good
+# iyi
 collection[index_or_key]
 ----
 
-=== Multi-line Arrays Alignment [[align-multiline-arrays]]
+=== Çok Satırlı Dizileri Hizalama [[align-multiline-arrays]]
 
-Align the elements of array literals spanning multiple lines.
+Birden çok satırda yazılan dizi elemanlarını hizalayın.
 
 [source,ruby]
 ----
-# bad - single indent
+# kötü - tek girinti
 menu_item = %w[Spam Spam Spam Spam Spam Spam Spam Spam
   Baked beans Spam Spam Spam Spam Spam]
 
-# good
+# iyi
 menu_item = %w[
   Spam Spam Spam Spam Spam Spam Spam Spam
   Baked beans Spam Spam Spam Spam Spam
 ]
 
-# good
+# iyi
 menu_item =
   %w[Spam Spam Spam Spam Spam Spam Spam Spam
      Baked beans Spam Spam Spam Spam Spam]
