@@ -75,7 +75,7 @@ Ruby topluluğunda belirli kurallarla ilgili bir fikir birliğininin sağlanamad
 
 Ruby, bu rehber oluşturulduğunda 15 yıldan uzun süredir varlığını sürdürüyordu ve dilin esnekliği ile ortak standartların olmaması, bir çok farklı kullanımın oluşmasına sebep oldu. İnsanları topluluk standartlarının amacı etrafında toplamak çok fazla zaman ve enerji aldı ve hala yapacak çok işimiz var.
 
-Ruby yazılımcı mutluluğu için optimize edilmiştir. Bu rehberin de maksimum yazılmıcı mutluluğuna yardım edeceğine inanıyourz.
+Ruby yazılımcı mutluluğu için optimize edilmiştir. Bu rehberin de maksimum yazılmıcı mutluluğuna yardım edeceğine inanıyoruz.
 
 === Tutarlılık Hakkında Bir Not
 
@@ -121,7 +121,7 @@ ____
 
 Dosyalarda karakter kodlaması olarak `UTF-8` kullanın.
 
-TIP: UFT-8, Ruby 2.0 versiyonundan beri varsayılan karakter kodlamasıdır.
+TIP: UTF-8, Ruby 2.0 versiyonundan beri varsayılan karakter kodlamasıdır.
 
 === Tab veya Boşluk? (Tabs or Spaces?) [[tabs-or-spaces]]
 
@@ -205,7 +205,7 @@ $ git config --global core.autocrlf true
 
 Her dosyayı yeni bir satır ile bitirin.
 
-TIP: This should be done via editor configuration, not manually.
+TIP: Bu işlem elle değil editör tarafından otomatik yapılmalı.
 
 === İfadeleri `;` ile Sonlandırmalı Mıyım? [[no-semicolon]]
 
