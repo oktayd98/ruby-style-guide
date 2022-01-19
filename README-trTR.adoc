@@ -214,7 +214,7 @@ TIP: Bu işlem elle değil editör tarafından otomatik yapılmalı.
 [source,ruby]
 ----
 # kötü
-puts 'foobar'; # geresiz noktalı virgün
+puts 'foobar'; # geresiz noktalı virgül
 
 # iyi
 puts 'foobar'
